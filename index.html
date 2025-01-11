@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4-Week Workout Program</title>
+  <!-- A simple Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .tab-button.active {
+      background-color: #333;
+      color: #fff;
+      border-color: #333;
+    }
+
+    .tab-content {
+      display: none;
+      margin-bottom: 30px;
+    }
+
+    /* Show active tab content */
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Fade in animation for a nicer look */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .day-container {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .day-header {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    ul.exercise-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.exercise-list li {
+      margin: 5px 0;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+      transform: scale(1.2);
+    }
+
+    /* Make sure it looks good on mobile devices */
+    @media (max-width: 768px) {
+      .tab-buttons {
+        flex-direction: column;
+      }
+      .tab-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>4-Week Workout Program</h1>
+
+  <!-- Navigation Tabs for Weeks -->
+  <div class="tab-buttons">
+    <div class="tab-button active" data-tab="week1">Week 1</div>
+    <div class="tab-button" data-tab="week2">Week 2</div>
+    <div class="tab-button" data-tab="week3">Week 3</div>
+    <div class="tab-button" data-tab="week4">Week 4</div>
+  </div>
+
+  <!-- Week 1 Content -->
+  <div id="week1" class="tab-content active">
+    <div class="day-container">
+      <div class="day-header">Day 1 (Chest and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Flat Barbell Bench Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Incline Chest Press Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Barbell Bench Press: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Chest Fly: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Captain's Chair Knee Raise: 12-15 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 12-15 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+
+    <div class="day-container">
+      <div class="day-header">Day 2 (Back)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Deadlift: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Pull-Up: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Cable Row: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Underhand Grip Lat Pulldown: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Bent Over Row: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+
+    <div class="day-container">
+      <div class="day-header">Day 3 (Legs and Glutes)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Squat: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Bulgarian Split Squat: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Static Barbell Lunge: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Romanian Deadlift: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Hip Thrust: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Leg Curl: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Machine Leg Extension: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Standing Calf Raise Machine: 8-10 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+
+    <div class="day-container">
+      <div class="day-header">Day 4 (Shoulders and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Seated Dumbbell Arnold Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Machine Shoulder Press: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Lateral Raise: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Facepull: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Weighted Crunch: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+
+    <div class="day-container">
+      <div class="day-header">Day 5 (Arms and Calves)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Bicep Curl: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell French Press: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Curl: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Tricep Dip Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Bicep Curl: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Skullcrusher: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Calf Raise Machine: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Week 2 Content -->
+  <div id="week2" class="tab-content">
+    <div class="day-container">
+      <div class="day-header">Day 1 (Chest and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Flat Barbell Bench Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Incline Chest Press Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Barbell Bench Press: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Chest Fly: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Cable Crunch: 12-15 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 12-15 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 2 (Back)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Deadlift: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Wide Grip Lat Pulldown: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Cable Row: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Underhand Grip Lat Pulldown: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Incline Row: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 3 (Legs and Glutes)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Squat: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Bulgarian Split Squat: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Static Barbell Lunge: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Romanian Deadlift: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Hip Thrust: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Leg Curl: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Machine Leg Extension: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Standing Calf Raise Machine: 8-10 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 4 (Shoulders and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Seated Dumbbell Arnold Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Dumbbell Shoulder Press: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Lateral Raise: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Facepull: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Weighted Crunch: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 5 (Arms and Calves)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Bicep Curl: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell French Press: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Curl: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Close Grip Barbell Bench Press: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Bicep Curl: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Skullcrusher: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Calf Raise Machine: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Week 3 Content -->
+  <div id="week3" class="tab-content">
+    <div class="day-container">
+      <div class="day-header">Day 1 (Chest and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Flat Barbell Bench Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Incline Chest Press Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Barbell Bench Press: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Chest Fly: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Cable Crunch: 12-15 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 12-15 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 2 (Back)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Deadlift: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Pull-Up: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Cable Row: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Underhand Grip Lat Pulldown: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />T-bar Row: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 3 (Legs and Glutes)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Squat: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Bulgarian Split Squat: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Static Barbell Lunge: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Romanian Deadlift: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Hip Thrust: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Leg Curl: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Machine Leg Extension: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Standing Calf Raise Machine: 8-10 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 4 (Shoulders and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Seated Dumbbell Arnold Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Machine Shoulder Press: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Lateral Raise: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Facepull: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Weighted Crunch: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 5 (Arms and Calves)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Bicep Curl: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell French Press: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Preacher Curl: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Tricep Dip Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Bicep Curl: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Skullcrusher: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Calf Raise Machine: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Week 4 Content -->
+  <div id="week4" class="tab-content">
+    <div class="day-container">
+      <div class="day-header">Day 1 (Chest and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Flat Barbell Bench Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Incline Chest Press Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Barbell Bench Press: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Chest Fly: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Cable Crunch: 12-15 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 12-15 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 2 (Back)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Deadlift: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Pull-Up: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Cable Row: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Underhand Grip Lat Pulldown: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />T-bar Row: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 3 (Legs and Glutes)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Squat: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Bulgarian Split Squat: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Static Barbell Lunge: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Romanian Deadlift: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Barbell Hip Thrust: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Seated Leg Curl: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Machine Leg Extension: 12-15 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Standing Calf Raise Machine: 8-10 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 4 (Shoulders and Core)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Seated Dumbbell Arnold Press: 4-6 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Machine Shoulder Press: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Cable Lateral Raise: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Facepull: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Decline Sit-Up: 10-12 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Weighted Crunch: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+    <div class="day-container">
+      <div class="day-header">Day 5 (Arms and Calves)</div>
+      <ul class="exercise-list">
+        <li><label><input type="checkbox" />Barbell Bicep Curl: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell French Press: 6-8 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Preacher Curl: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Tricep Dip Machine: 8-10 reps (Normal Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Bicep Curl: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Dumbbell Skullcrusher: 10-12 reps (Drop Set)</label></li>
+        <li><label><input type="checkbox" />Seated Calf Raise Machine: 10-12 reps (Drop Set)</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // ----- Tab switching logic -----
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove 'active' from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        // Add 'active' to the clicked button
+        button.classList.add('active');
+
+        // Hide all tab contents
+        tabContents.forEach(tab => tab.classList.remove('active'));
+        // Show the correct tab content
+        const target = document.getElementById(button.dataset.tab);
+        target.classList.add('active');
+      });
+    });
+
+    // ----- localStorage for checkboxes -----
+    // 1. On load, restore the saved states
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Load from local storage
+    checkboxes.forEach((checkbox, index) => {
+      const saved = localStorage.getItem(`checkbox-${index}`);
+      if (saved === 'true') {
+        checkbox.checked = true;
+      }
+      // On change, save to local storage
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(`checkbox-${index}`, checkbox.checked);
+      });
+    });
+  </script>
+
+</body>
+</html>
